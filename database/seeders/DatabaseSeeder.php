@@ -2,8 +2,17 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
+
+// use BusinessesTableSeeder;
+// use CompanyTableSeeder;
+// use ConfigSeeder;
+// use CountriesTableSeeder;
+// use SectorTableSeeder;
+// use SliderSeeder;
+// use UserOwnerSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +29,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            CountriesTableSeeder::class,
+            BusinessesTableSeeder::class,
+            SectorTableSeeder::class,
+            UserOwnerSeeder::class,
+            CompanyTableSeeder::class,
+            SliderSeeder::class,
+            ConfigSeeder::class
+        ]);
+        // $this->call(CountriesTableSeeder::class);
+        // $this->call(BussinessesTableSeeder::class);
+        // $this->call(SectorTableSeeder::class);
+        // $this->call(UserOwnerSeeder::class);
+        // $this->call(CompanyTableSeeder::class);
+        // $this->call(SliderSeeder::class);
+        // $this->call(ConfigSeeder::class);
     }
 }
